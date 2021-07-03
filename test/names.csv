@@ -1,0 +1,8 @@
+BRDF,glossiness,refsharp,contgloss,metallicness,lightness,anisotropy
+[1_1_cambridge_2k][bunny_vt][MERL-natural-209].jpg,2,2,2,1,1,1
+[1_1_cambridge_2k][bunny_vt][MERL-neoprene-rubber].jpg,1,1,1,1,1,1
+[1_1_cambridge_2k][bunny_vt][MERL-nickel].jpg,5,2,2,5,3,1
+[1_1_cambridge_2k][bunny_vt][MERL-nylon].jpg,1,1,1,1,3,2
+[1_1_cambridge_2k][bunny_vt][MERL-orange-paint].jpg,1,1,1,1,5,1
+[1_1_cambridge_2k][bunny_vt][MERL-pearl-paint].jpg,2,1,1,1,4,1
+[1_1_cambridge_2k][bunny_vt][MERL-pickled-oak-260].jpg,1,1,1,1,2,1
