@@ -40,14 +40,6 @@ def test(arg_dict):
     tl.files.assign_params(sess, load_params, output_pred)
     print("...done!\n")
     
-    mse_sum = 0.0
-    mae_sum = 0.0
-    mse_list = []
-    mae_list = []
-    mse_sum_each = []
-    mse_sum_each_list = []
-    mae_sum_each = []
-    mae_sum_each_list = []
     file_name_list = []
     predictor_score = []
     gt_score = []
@@ -77,44 +69,8 @@ def test(arg_dict):
         predictor_score.append(y_predict_score_list)
         gt_score.append(gt_pred_np_list)
 
-        # MSE loss
-        loss_each, loss_mean = loss_mse_np_each(y_predict_score_list, gt_pred_np_list)
-        mse_list.append(loss_mean)
-
-        # MAE loss
-        loss_each_mae, loss_mean_mae = loss_mae_np_each(y_predict_score_list, gt_pred_np_list)
-        mae_list.append(loss_mean_mae)
-
-        print('y_predict_score is :', y_predict_score_np.tolist())
-        print('gt is :', gt_pred_np.tolist())
-        print('loss_mse is :', loss_mean)
-        print('loss_mse_each is:', loss_each)
-        print('loss_mae is :', loss_mean_mae)
-        print('loss_mae_each is:', loss_each_mae)
-
-        mse_sum_each_list.append(loss_each)
-        mse_sum = mse_sum + loss_mean
-        mse_sum_each = np.sum([mse_sum_each, loss_each], axis = 0)
-
-        mae_sum_each_list.append(loss_each_mae)
-        mae_sum = mae_sum + loss_mean_mae
-        mae_sum_each = np.sum([mae_sum_each, loss_each_mae], axis = 0)
-
-    mse_mean = mse_sum/len(input_files)
-    mse_mean_each = np.array(mse_sum_each)/len(input_files)
-    print('mse_mean is :', mse_mean)
-    print('mse_mean_each is :', mse_mean_each.tolist())
-   
-    mae_mean = mae_sum/len(input_files)
-    mae_mean_each = np.array(mae_sum_each)/len(input_files)
-    print('mae_mean is :', mae_mean)
-    print('mae_mean_each is :', mae_mean_each.tolist())
-
-    mse_sum_each_list = np.array(mse_sum_each_list)
     gt_score = np.array(gt_score)
     predictor_score = np.array(predictor_score)
-    mae_sum_each_list = np.array(mae_sum_each_list)
-
 
 ##change the save_path to your own path
 ##the predited score with the ground truth score
