@@ -40,13 +40,13 @@ Run:
 python main.py
 ```
 
-### How to Train a new model
+## How to Train a new model
 Edit the config.py, put training data under 'input_path' and labels under gt_path.  <br>
 Run:
 ```bash
 python main.py --is_test False
 ```
-### Predictor Examples
+## Predictor Examples
 
 Here are testing examples, we show the predictor results with human annotation.
 <div align="center">  
