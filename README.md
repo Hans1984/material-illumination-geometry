@@ -2,7 +2,7 @@
 Code for Siggraph 2021 paper: The effect of shape and illumination on material perception: model and applications.
 <div align="center">  
   
-# A Similarity Measure for Material Appearance   
+# The effect of shape and illumination on material perception: model and applications  
 [![Project page](https://img.shields.io/badge/-Project%20page-blue)](http://mig.mpi-inf.mpg.de/)
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)]()
 [![Conference](https://img.shields.io/badge/SIGGRAPH-2021-green)]()
