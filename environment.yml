@@ -13,7 +13,7 @@ dependencies:
   - tensorflow-gpu=1.10.0 
   - pip:
     - easydict==1.9
-    - numpy==1.19.5
+    - numpy==1.16.2
     - opencv-contrib-python==4.4.0.46
     - opencv-python==3.4.3.18
     - tensorlayer==1.9.1
