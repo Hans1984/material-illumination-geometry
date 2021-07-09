@@ -19,7 +19,7 @@ Material appearance hinges on material reflectance properties but also surface g
 
 ## Environment Setting it up   
 ```bash
- conda env create -f environment.yml
+conda env create -f environment.yml -p 'your_env_path'
 ```
 
 ### Dependencies
