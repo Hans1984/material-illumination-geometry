@@ -53,6 +53,12 @@ Here are testing examples, we show the predictor results with human annotation.
 <img src="images/results.png" >
 </div>
 
+## [update 30/11/2021]
+We are introducing some minor fixes to the code. These changes only produce slight variations of the predictions reported in the paper and should not affect the overall quality of the predictions:
+Code: We have updated the resizing function from scipy to opencv to avoid reported issues with https://github.com/scipy/scipy/issues/4458.
+Code: We have updated the code for selecting the test set so that it matches what we report in the paper (Sec. 5.2).
+Pre-trained model: We have updated the pre-trained model with these new changes applied.
+
 ## Citation   
 If you found this code useful please cite our work as:
 ```
