@@ -29,9 +29,9 @@ First, clone and install dependencies
 git clone https://github.com/Hans1984/material-illumination-geometry.git      
 ```
 
-Get model pretrained weights
-- download model [weights](https://drive.google.com/file/d/1nEvTcSOaWxQGpS19JMyStr6NWy38Pcvm/view?usp=sharing)
-- download dataset [dataset]()
+Get Dataset
+
+- download dataset [dataset](http://mig.mpi-inf.mpg.de/)
 
 ## How to test
 Here we give several test images with labels under the folder ./test. To test, you can download the pre-trained model, put it under the ./weights folder.  <br>
