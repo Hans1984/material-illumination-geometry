@@ -34,7 +34,7 @@ Get Dataset
 - download dataset [dataset](http://mig.mpi-inf.mpg.de/)
 
 ## How to test
-Here we give several test images with labels under the folder ./test. To test, you can download the pre-trained model, put it under the ./weights folder.  <br>
+Here we give several test images with labels under the folder ./test. <br>
 Run:
 ```bash
 python main.py
