@@ -28,9 +28,9 @@ def load_data_cvs_exclude(arg_dict, is_train=False):
     d_validation = []
     d_train = []
     for i in range(len(data[:,0])):
-       if '[bunny_vt]'in data[:,0][i] or '1_1_cambridge_2k' in data[:,0][i]:
+       if '[bunny_vt]'in data[:,0][i] and '1_1_cambridge_2k' in data[:,0][i]:
              d_validation.append(data[i,0:7])
-       else:
+       if not '[bunny_vt]' in data[:,0][i] and not '1_1_cambridge_2k' in data[:,0][i]:
              d_train.append(data[i,0:7])
 
     d_train = np.array(d_train)
@@ -48,13 +48,14 @@ def load_data_cvs_exclude(arg_dict, is_train=False):
 
     return input_files, gt_values
 
-def read_imgs_test(img_paths):
-    """ Input an image path and name, return an image array """
-    img = (scipy.misc.imread(img_paths, mode='RGB')/255.).astype(np.float32)
-    img = scipy.misc.imresize(img, size = (512, 512))
+def read_imgs_test_cv(img_paths):
+    img = (cv2.imread(img_paths)/255.).astype(np.float32)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.resize(img, (512, 512))
     img = img[np.newaxis,:,:,:]
 
     return img
+
 
 #data augmentation
 def filp_horizontal(img):
@@ -72,7 +73,7 @@ def img_padding(img):
     return img
 
 def img_resize(img, size=(512, 512)):
-    img = imresize(img, size = size)
+    img = cv2.resize(img, size)#imresize(img, size = size)
     return img
 
 def random_rotation(img, angle_range=(0, 360)):
@@ -101,7 +102,7 @@ def random_crop(image, crop_size):
 
 def scale_augmentation(img, scale_range, crop_size):
     scale_size = np.random.randint(*scale_range)
-    img = imresize(img, (scale_size, scale_size))
+    img = cv2.resize(img, (scale_size, scale_size))#imresize(img, (scale_size, scale_size))
     img = random_crop(img, crop_size)
     img = img_resize(img)
     return img
@@ -109,7 +110,7 @@ def scale_augmentation(img, scale_range, crop_size):
 def scale_augmentation_distored(img, scale_range_h, scale_range_w, crop_size):
     scale_size_h = np.random.randint(*scale_range_h)
     scale_size_w = np.random.randint(*scale_range_w)
-    img = imresize(img, (scale_size_h, scale_size_w))
+    img = cv2.resize(img, (scale_size_h, scale_size_w))#imresize(img, (scale_size_h, scale_size_w))
     img = random_crop(img, crop_size)
     img = img_resize(img)
     return img
@@ -176,18 +177,20 @@ def data_augmentation(img, ep):
         img = img_resize(img)
     return img
 
+
 def read_imgs_augmentation(img_paths):
     """ Input an image path and name, return an image array """
     ep = np.random.randint(0, 10)
     imgs = []
 
     for idx in range(len(img_paths)):
-        img = (scipy.misc.imread(img_paths[idx], mode='RGB')/255.).astype(np.float32)
+        img = (cv2.imread(img_paths[idx])/255.).astype(np.float32)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = data_augmentation(img, ep)
         imgs.append(img)
 
     return imgs
-
+    
 ##loss function for training
 #RMLSE Loss Function
 def RMSLE(y_predict, gt):

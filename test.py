@@ -60,8 +60,6 @@ def test(arg_dict):
         # convey tensor to numpy
         y_predict_score  = sess.run([y_predict], feed_dict=feed_dict)
         y_predict_score_np = np.squeeze(y_predict_score)
-        y_predict_score_np = (7.0 * y_predict_score_np - 1.0)/6.0
-        y_predict_score_np[y_predict_score_np<0] = 0.0
         gt_pred_np = np.squeeze(gt_pred)
 
         gt_pred_np_list = gt_pred_np.tolist()  
