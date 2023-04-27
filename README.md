@@ -58,6 +58,12 @@ We are introducing some minor fixes to the code. These changes only produce slig
 Code: We have updated the resizing function from scipy to opencv to avoid reported issues with https://github.com/scipy/scipy/issues/4458. <br>
 Code: We have updated the code for selecting the test set so that it matches what we report in the paper (Sec. 5.2). <br>
 Pre-trained model: We have updated the pre-trained model with these new changes applied.<br>
+Results: The updated prediction errors with these changes (Table 2 in the main paper) are as follows. <br>
+|  | Glossiness | Contrast of reflections | Sharpness of reflections | Metallicness | Lightness | All |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Set A | 0.1279 	± 0.1414 | 0.0957 ± 0.1306 |	0.1042  ± 0.1425| 0.0821 ± 0.1241	| 0.1373 ±0.1164 | 0.1149 ± 0.0958|
+
+
 
 ## Citation   
 If you found this code useful please cite our work as:
