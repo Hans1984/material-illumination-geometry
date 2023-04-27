@@ -61,8 +61,8 @@ Pre-trained model: We have updated the pre-trained model with these new changes 
 Results: The updated prediction errors with these changes (Table 2 in the main paper) are as follows. <br>
 |  | Glossiness | Contrast of reflections | Sharpness of reflections | Metallicness | Lightness | All |
 |:------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: | :-------------: |
-|Set A| 0.1279 	± 0.1414 | 0.0957 ± 0.1306 |	0.1042  ± 0.1425| 0.0821 ± 0.1241	| 0.1373 ± 0.1164 | 0.1149 ± 0.0958|
-|Set B| 0.3308 	± 0.2346 | 0.2878 ± 0.2027 |	0.2358 ± 0.1629| 0.2532 ± 0.1987	| 0.2179 ± 0.1702 | 0.2540 ± 0.1323|
+| A| 0.1279 	± 0.1414 | 0.0957 ± 0.1306 |	0.1042 ± 0.1425| 0.0821 ± 0.1241	| 0.1373 ± 0.1164 | 0.1149 ± 0.0958|
+| B| 0.3308 	± 0.2346 | 0.2878 ± 0.2027 |	0.2358 ± 0.1629| 0.2532 ± 0.1987	| 0.2179 ± 0.1702 | 0.2540 ± 0.1323|
 
 
 ## Citation   
